@@ -1,0 +1,1319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#fffaf6" />
+    <title>Air India — The world is within reach</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --red: #b3132b;
+        --ink: #202229;
+        --line: #e9e5e1;
+        --gold: #c49a58;
+        --shadow: 0 22px 70px #24150d17;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: "DM Sans", sans-serif;
+        background: #fff;
+      }
+      button,
+      input,
+      select {
+        font: inherit;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .topbar {
+        height: 36px;
+        background: #811126;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 max(calc((100vw - 1200px) / 2), 28px);
+        gap: 23px;
+        font-size: 11px;
+      }
+      .nav {
+        height: 82px;
+        padding: 0 max(calc((100vw - 1200px) / 2), 28px);
+        display: flex;
+        align-items: center;
+        gap: 46px;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        z-index: 4;
+        background: #fff;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 175px;
+      }
+      .brand-mark {
+        width: 41px;
+        height: 41px;
+        border: 1.5px solid var(--red);
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: var(--red);
+        font: bold 24px Georgia;
+        position: relative;
+      }
+      .brand-mark:after {
+        content: "";
+        position: absolute;
+        width: 26px;
+        border-top: 2px solid var(--gold);
+        transform: rotate(-30deg);
+        top: 15px;
+      }
+      .brand-name {
+        font-size: 19px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        color: #9e1730;
+      }
+      .brand-name small {
+        display: block;
+        font-size: 8px;
+        letter-spacing: 0.32em;
+        color: #555;
+        margin-top: 3px;
+      }
+      .navlinks {
+        display: flex;
+        gap: 30px;
+        flex: 1;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .navlinks a {
+        padding: 15px 0;
+      }
+      .navlinks a:hover {
+        color: var(--red);
+      }
+      .signin {
+        border: 1px solid #d8d2ce;
+        border-radius: 24px;
+        padding: 10px 17px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .menu-btn {
+        display: none;
+        border: 0;
+        background: none;
+        color: var(--red);
+        font-size: 23px;
+      }
+      .hero {
+        height: 500px;
+        position: relative;
+        overflow: hidden;
+        background: #54463e;
+      }
+      .hero-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 43%;
+        filter: saturate(0.82);
+      }
+      .hero:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, #171413b3, #17141360 40%, transparent 76%),
+          linear-gradient(0deg, #12100d50, transparent 50%);
+      }
+      .hero-copy {
+        position: absolute;
+        z-index: 1;
+        left: max(calc((100vw - 1160px) / 2), 38px);
+        top: 72px;
+        color: white;
+        max-width: 500px;
+      }
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.19em;
+        font-size: 10px;
+        font-weight: 700;
+      }
+      .eyebrow:before {
+        content: "";
+        width: 26px;
+        border-top: 1px solid var(--gold);
+      }
+      .hero h1 {
+        font:
+          600 56px/1.1 "Playfair Display",
+          serif;
+        letter-spacing: -0.02em;
+        margin: 19px 0 13px;
+      }
+      .hero p {
+        font-size: 15px;
+        line-height: 1.7;
+        max-width: 390px;
+        color: #f5eeee;
+      }
+      .cta {
+        display: inline-flex;
+        gap: 14px;
+        align-items: center;
+        background: var(--red);
+        color: white;
+        padding: 14px 21px;
+        margin-top: 14px;
+        border-radius: 3px;
+        font-weight: 700;
+        font-size: 12px;
+      }
+      .caption {
+        position: absolute;
+        z-index: 1;
+        right: 35px;
+        bottom: 27px;
+        color: #fff;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+      }
+      .booking-wrap {
+        position: relative;
+        z-index: 3;
+        max-width: 1160px;
+        margin: -55px auto 0;
+      }
+      .booking {
+        background: white;
+        border-radius: 5px;
+        box-shadow: var(--shadow);
+        padding: 0 30px 25px;
+      }
+      .tabs {
+        height: 61px;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        gap: 30px;
+      }
+      .tab {
+        border: 0;
+        background: none;
+        color: #777;
+        font-size: 12px;
+        font-weight: 600;
+        position: relative;
+        cursor: pointer;
+      }
+      .tab.active {
+        color: var(--red);
+      }
+      .tab.active:after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        background: var(--red);
+      }
+      .options {
+        height: 55px;
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        font-size: 11px;
+        color: #555;
+      }
+      .options input {
+        accent-color: var(--red);
+      }
+      .points {
+        margin-left: auto;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1.05fr 34px 1.05fr 1fr 1fr 1.1fr;
+        gap: 8px;
+        align-items: stretch;
+      }
+      .field {
+        border: 1px solid #dedad5;
+        border-radius: 4px;
+        padding: 11px 13px;
+        min-height: 67px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .field:focus-within {
+        border-color: var(--red);
+      }
+      .field label {
+        font-size: 9px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #777;
+        margin-bottom: 5px;
+      }
+      .field input,
+      .field select {
+        border: 0;
+        outline: none;
+        background: transparent;
+        color: #222;
+        font-size: 13px;
+        font-weight: 600;
+        width: 100%;
+        padding: 0;
+      }
+      .sub {
+        font-size: 9px;
+        color: #888;
+        margin-top: 4px;
+      }
+      .swap {
+        align-self: center;
+        justify-self: center;
+        border: 1px solid #dedad5;
+        background: white;
+        color: var(--red);
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        z-index: 1;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 17px;
+      }
+      .hint {
+        font-size: 10px;
+        color: #777;
+      }
+      .hint strong {
+        color: var(--red);
+      }
+      .search {
+        background: var(--red);
+        color: white;
+        border: 0;
+        border-radius: 3px;
+        padding: 14px 32px;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .action-panel {
+        display: none;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px;
+        padding: 22px 0;
+      }
+      .action-panel .search {
+        align-self: stretch;
+      }
+      .info {
+        max-width: 1160px;
+        margin: 22px auto;
+        display: flex;
+        gap: 23px;
+        color: #777;
+        font-size: 10px;
+      }
+      .info a:hover {
+        color: var(--red);
+      }
+      .section {
+        max-width: 1160px;
+        margin: 82px auto 0;
+      }
+      .heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        margin-bottom: 25px;
+      }
+      .heading .eyebrow {
+        color: var(--red);
+        font-size: 9px;
+      }
+      .heading h2 {
+        font:
+          600 36px "Playfair Display",
+          serif;
+        margin: 8px 0 0;
+      }
+      .view {
+        color: var(--red);
+        font-size: 11px;
+        font-weight: 700;
+        border-bottom: 1px solid #d6a6ac;
+        padding-bottom: 5px;
+      }
+      .deals {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .deal {
+        height: 310px;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+        background: #ddd;
+      }
+      .deal img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.6s;
+      }
+      .deal:hover img {
+        transform: scale(1.05);
+      }
+      .deal:after {
+        content: "";
+        position: absolute;
+        inset: 35% 0 0;
+        background: linear-gradient(0deg, #1a1112c9, transparent);
+      }
+      .deal-copy {
+        position: absolute;
+        z-index: 1;
+        bottom: 22px;
+        left: 22px;
+        right: 20px;
+        color: white;
+      }
+      .tag {
+        font-size: 9px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #eed4a4;
+        font-weight: 700;
+      }
+      .deal h3 {
+        font:
+          600 24px "Playfair Display",
+          serif;
+        margin: 8px 0;
+      }
+      .deal p {
+        font-size: 11px;
+        margin: 0 0 14px;
+        color: #eee;
+      }
+      .deal-copy a {
+        font-size: 10px;
+        font-weight: 700;
+        border-bottom: 1px solid #ffffff85;
+        padding-bottom: 4px;
+      }
+      .club {
+        margin-top: 95px;
+        background: #8e1028;
+        color: white;
+        overflow: hidden;
+      }
+      .club-inner {
+        max-width: 1160px;
+        margin: auto;
+        min-height: 285px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 40px 10px;
+        position: relative;
+      }
+      .club-inner:after {
+        content: "";
+        position: absolute;
+        width: 650px;
+        height: 650px;
+        border: 1px solid #ffffff20;
+        border-radius: 50%;
+        right: -160px;
+        top: -360px;
+        box-shadow:
+          0 0 0 70px #ffffff08,
+          0 0 0 150px #ffffff07;
+      }
+      .club-copy {
+        max-width: 570px;
+        z-index: 1;
+      }
+      .club .eyebrow {
+        color: #f2d6a7;
+      }
+      .club h2 {
+        font:
+          600 37px "Playfair Display",
+          serif;
+        margin: 14px 0;
+      }
+      .club p {
+        font-size: 13px;
+        line-height: 1.7;
+        color: #f3dfe2;
+      }
+      .benefits {
+        display: flex;
+        gap: 45px;
+        margin-top: 20px;
+        font-size: 10px;
+        color: #f4dadd;
+      }
+      .benefits strong {
+        display: block;
+        color: white;
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+      .club-btn {
+        z-index: 1;
+        background: white;
+        color: #851127;
+        border: 0;
+        border-radius: 3px;
+        padding: 14px 21px;
+        font-size: 11px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .routes {
+        margin-top: 88px;
+      }
+      .route-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+      }
+      .route {
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        padding: 18px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: 0.2s;
+      }
+      .route:hover {
+        border-color: #bd8090;
+        transform: translateY(-2px);
+      }
+      .route small {
+        display: block;
+        font-size: 9px;
+        color: #888;
+        letter-spacing: 0.1em;
+        margin-bottom: 5px;
+      }
+      .route strong {
+        font-size: 13px;
+      }
+      .route i {
+        color: var(--red);
+        font-style: normal;
+      }
+      .footer {
+        margin-top: 95px;
+        background: #f8f5f2;
+        padding: 52px 0 25px;
+      }
+      .footer-inner {
+        max-width: 1160px;
+        margin: auto;
+      }
+      .footer-top {
+        display: grid;
+        grid-template-columns: 1.4fr repeat(4, 1fr);
+        gap: 35px;
+        padding-bottom: 38px;
+        border-bottom: 1px solid #e5dfd9;
+      }
+      .footer-blurb {
+        font-size: 11px;
+        line-height: 1.7;
+        color: #777;
+        max-width: 220px;
+        margin-top: 17px;
+      }
+      .footer-col b {
+        font-size: 11px;
+      }
+      .footer-col a {
+        display: block;
+        color: #737176;
+        font-size: 10px;
+        margin: 12px 0;
+      }
+      .footer-col a:hover {
+        color: var(--red);
+      }
+      .bottom {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+        color: #858186;
+        font-size: 9px;
+      }
+      .toast {
+        position: fixed;
+        bottom: 22px;
+        left: 50%;
+        transform: translate(-50%, 100px);
+        opacity: 0;
+        background: #252226;
+        color: white;
+        border-radius: 4px;
+        padding: 13px 20px;
+        font-size: 12px;
+        z-index: 9;
+        transition: 0.3s;
+      }
+      .toast.show {
+        transform: translate(-50%, 0);
+        opacity: 1;
+      }
+      .mobile {
+        display: none;
+      }
+      @media (max-width: 1220px) {
+        .booking-wrap,
+        .section,
+        .info {
+          margin-left: 28px;
+          margin-right: 28px;
+        }
+        .club-inner,
+        .footer-inner {
+          margin-left: 30px;
+          margin-right: 30px;
+        }
+        .navlinks {
+          gap: 20px;
+        }
+      }
+      @media (max-width: 850px) {
+        .nav {
+          padding: 0 20px;
+          height: 70px;
+          justify-content: space-between;
+        }
+        .navlinks {
+          display: none;
+        }
+        .menu-btn {
+          display: block;
+        }
+        .hero {
+          height: 445px;
+        }
+        .hero-copy {
+          left: 30px;
+          top: 65px;
+        }
+        .hero h1 {
+          font-size: 48px;
+        }
+        .booking-wrap {
+          margin: -40px 18px 0;
+        }
+        .booking {
+          padding: 0 18px 20px;
+        }
+        .grid {
+          grid-template-columns: 1fr 32px 1fr;
+          gap: 8px;
+        }
+        .grid .field:nth-child(4) {
+          grid-column: 1;
+        }
+        .grid .field:nth-child(5) {
+          grid-column: 2/4;
+        }
+        .grid .field:nth-child(6) {
+          grid-column: 1/4;
+        }
+        .swap {
+          grid-column: 2;
+          grid-row: 1;
+        }
+        .section {
+          margin: 70px 24px 0;
+        }
+        .deals {
+          gap: 12px;
+        }
+        .deal {
+          height: 270px;
+        }
+        .deal h3 {
+          font-size: 20px;
+        }
+        .club-inner {
+          margin: 0 28px;
+        }
+        .club-btn {
+          margin-right: 12px;
+        }
+        .route-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .footer-inner {
+          margin: 0 26px;
+        }
+        .footer-top {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .footer-about {
+          grid-column: 1/-1;
+        }
+      }
+      @media (max-width: 580px) {
+        .topbar {
+          height: 30px;
+          padding: 0 14px;
+          gap: 14px;
+          font-size: 9px;
+        }
+        .nav {
+          height: 64px;
+          padding: 0 14px;
+        }
+        .brand {
+          min-width: 0;
+          gap: 7px;
+        }
+        .brand-mark {
+          width: 34px;
+          height: 34px;
+          font-size: 20px;
+        }
+        .brand-name {
+          font-size: 16px;
+        }
+        .brand-name small {
+          font-size: 6px;
+        }
+        .signin {
+          padding: 8px 11px;
+          font-size: 10px;
+        }
+        .hero {
+          height: 410px;
+        }
+        .hero-img {
+          object-position: 58% center;
+        }
+        .hero:after {
+          background:
+            linear-gradient(90deg, #151210a6, transparent),
+            linear-gradient(0deg, #1118, transparent 60%);
+        }
+        .hero-copy {
+          left: 20px;
+          right: 18px;
+          top: 58px;
+        }
+        .hero h1 {
+          font-size: 41px;
+        }
+        .hero p {
+          font-size: 13px;
+          max-width: 310px;
+        }
+        .caption {
+          right: 13px;
+          bottom: 15px;
+          font-size: 8px;
+        }
+        .booking-wrap {
+          margin: -28px 10px 0;
+        }
+        .booking {
+          padding: 0 12px 17px;
+        }
+        .tabs {
+          height: 53px;
+          gap: 12px;
+          justify-content: space-between;
+        }
+        .tab {
+          font-size: 9px;
+        }
+        .options {
+          height: 46px;
+          gap: 10px;
+          font-size: 9px;
+        }
+        .grid {
+          grid-template-columns: 1fr 27px 1fr;
+          gap: 6px;
+        }
+        .field {
+          padding: 9px 9px;
+          min-height: 61px;
+        }
+        .field label {
+          font-size: 8px;
+        }
+        .field input,
+        .field select {
+          font-size: 11px;
+        }
+        .grid .field:nth-child(4) input,
+        .grid .field:nth-child(5) input {
+          font-size: 9px;
+        }
+        .grid .field:nth-child(6) {
+          grid-column: 1/4;
+        }
+        .row {
+          gap: 8px;
+        }
+        .hint {
+          max-width: 125px;
+          line-height: 1.5;
+        }
+        .search {
+          padding: 13px 20px;
+          font-size: 11px;
+        }
+        .info {
+          margin: 14px 15px;
+          gap: 10px;
+          flex-wrap: wrap;
+          font-size: 8px;
+        }
+        .info .sep {
+          display: none;
+        }
+        .section {
+          margin: 58px 16px 0;
+        }
+        .heading {
+          margin-bottom: 18px;
+        }
+        .heading h2 {
+          font-size: 29px;
+        }
+        .heading .eyebrow {
+          font-size: 8px;
+        }
+        .view {
+          font-size: 9px;
+        }
+        .deals {
+          grid-template-columns: 1fr;
+          gap: 13px;
+        }
+        .deal {
+          height: 275px;
+        }
+        .deal h3 {
+          font-size: 23px;
+        }
+        .club {
+          margin-top: 62px;
+        }
+        .club-inner {
+          display: block;
+          margin: 0;
+          padding: 37px 19px;
+        }
+        .club h2 {
+          font-size: 31px;
+        }
+        .club p {
+          font-size: 12px;
+        }
+        .benefits {
+          gap: 20px;
+          font-size: 9px;
+        }
+        .benefits strong {
+          font-size: 12px;
+        }
+        .club-btn {
+          margin: 23px 0 0;
+        }
+        .routes {
+          margin-top: 60px;
+        }
+        .route-grid {
+          gap: 8px;
+        }
+        .route {
+          padding: 13px 10px;
+        }
+        .route strong {
+          font-size: 11px;
+        }
+        .footer {
+          margin-top: 65px;
+          padding: 38px 0 23px;
+        }
+        .footer-inner {
+          margin: 0 17px;
+        }
+        .footer-top {
+          grid-template-columns: 1fr 1fr;
+          gap: 22px 12px;
+        }
+        .footer-about {
+          grid-column: 1/-1;
+        }
+        .bottom {
+          flex-wrap: wrap;
+          gap: 10px;
+          line-height: 1.5;
+        }
+        .mobile {
+          display: flex;
+          position: fixed;
+          z-index: 8;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: #fff;
+          border-top: 1px solid #ece7e2;
+          justify-content: space-around;
+          padding: 8px 5px calc(8px + env(safe-area-inset-bottom));
+          box-shadow: 0 -5px 20px #0000000a;
+        }
+        .mobile a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 3px;
+          font-size: 8px;
+          color: #666;
+        }
+        .mobile span {
+          font-size: 16px;
+          color: var(--red);
+        }
+        body {
+          padding-bottom: 55px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <a href="#">Support</a
+      ><a href="#book" data-action="status">Flight status</a
+      ><a href="#">IN / EN⌄</a>
+    </div>
+    <header class="nav">
+      <a class="brand" href="#top"
+        ><span class="brand-mark">A</span
+        ><span class="brand-name">AIR INDIA<small>FLY THE NEW</small></span></a
+      >
+      <nav class="navlinks">
+        <a href="#book">Book &amp; manage</a><a href="#routes">Where we fly</a
+        ><a href="#deals">Discover</a><a href="#club">Maharaja Club</a>
+      </nav>
+      <div>
+        <a class="signin" href="#">Sign in</a
+        ><button class="menu-btn" aria-label="Open menu">☰</button>
+      </div>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <img
+          class="hero-img"
+          src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&amp;fit=crop&amp;w=2200&amp;q=85"
+          alt="Airplane wing above a sea of clouds"
+        />
+        <div class="hero-copy">
+          <div class="eyebrow">A new feeling takes flight</div>
+          <h1>The world is<br />within reach.</h1>
+          <p>
+            From the familiar warmth of India to the far corners of the world,
+            every journey begins with a welcome.
+          </p>
+          <a class="cta" href="#book">Plan your journey <span>↗</span></a>
+        </div>
+        <div class="caption">A WORLD OF POSSIBILITIES · AIR INDIA</div>
+      </section>
+      <div class="booking-wrap" id="book">
+        <div class="booking">
+          <div class="tabs">
+            <button class="tab active" data-panel="flights">
+              ✈ &nbsp;Book flights</button
+            ><button class="tab" data-panel="checkin">▤ &nbsp;Check-in</button
+            ><button class="tab" data-panel="status">
+              ◷ &nbsp;Flight status</button
+            ><button class="tab" data-panel="manage">
+              ▣ &nbsp;Manage booking
+            </button>
+          </div>
+          <div id="flight-panel">
+            <div class="options">
+              <label
+                ><input type="radio" name="trip" checked /> Round trip</label
+              ><label><input type="radio" name="trip" /> One way</label
+              ><label><input type="radio" name="trip" /> Multi-city</label
+              ><label class="points"
+                ><input type="checkbox" /> Book with points</label
+              >
+            </div>
+            <form id="flight-form">
+              <div class="grid">
+                <div class="field">
+                  <label for="from">From</label
+                  ><input id="from" value="Delhi (DEL)" /><span class="sub"
+                    >Indira Gandhi International</span
+                  >
+                </div>
+                <button class="swap" type="button" title="Swap cities">
+                  ⇄
+                </button>
+                <div class="field">
+                  <label for="to">To</label
+                  ><input id="to" placeholder="City or airport" /><span
+                    class="sub"
+                    >Choose your destination</span
+                  >
+                </div>
+                <div class="field">
+                  <label for="depart">Departure</label
+                  ><input id="depart" type="date" />
+                </div>
+                <div class="field">
+                  <label for="return">Return</label
+                  ><input id="return" type="date" />
+                </div>
+                <div class="field">
+                  <label for="passengers">Passengers &amp; cabin</label
+                  ><select id="passengers">
+                    <option>1 Adult · Economy</option>
+                    <option>2 Adults · Economy</option>
+                    <option>1 Adult · Premium Economy</option>
+                    <option>1 Adult · Business</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <span class="hint"
+                  >Enjoy <strong>exclusive fares</strong> when you book
+                  direct.</span
+                ><button class="search" type="submit">
+                  Search flights&nbsp; →
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="action-panel" id="action-panel">
+            <div class="field">
+              <label id="action-label">Booking reference</label
+              ><input id="reference" placeholder="e.g. ABC123" />
+            </div>
+            <div class="field">
+              <label for="lastname">Last name</label
+              ><input id="lastname" placeholder="As on your booking" />
+            </div>
+            <button class="search" id="action-submit">Continue →</button>
+          </div>
+        </div>
+      </div>
+      <div class="info">
+        <a href="#">✧ &nbsp;Baggage information</a><span class="sep">·</span
+        ><a href="#">◉ &nbsp;Travelling with pets</a><span class="sep">·</span
+        ><a href="#">♧ &nbsp;Special assistance</a><span class="sep">·</span
+        ><a href="#">ⓘ &nbsp;Travel updates</a>
+      </div>
+      <section class="section" id="deals">
+        <div class="heading">
+          <div>
+            <div class="eyebrow">Find your somewhere</div>
+            <h2>Journeys worth taking</h2>
+          </div>
+          <a href="#routes" class="view">Explore destinations&nbsp; →</a>
+        </div>
+        <div class="deals">
+          <article class="deal">
+            <img
+              src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+              alt="Tropical beach"
+            />
+            <div class="deal-copy">
+              <div class="tag">India · Beach escape</div>
+              <h3>Goa, in your own time.</h3>
+              <p>Sea breeze, slow mornings and sunsets that stay with you.</p>
+              <a href="#book">Discover Goa &nbsp;↗</a>
+            </div>
+          </article>
+          <article class="deal">
+            <img
+              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+              alt="Mountain landscape"
+            />
+            <div class="deal-copy">
+              <div class="tag">The world, connected</div>
+              <h3>Somewhere extraordinary.</h3>
+              <p>Find a new perspective with our global network.</p>
+              <a href="#routes">Find your next trip &nbsp;↗</a>
+            </div>
+          </article>
+          <article class="deal">
+            <img
+              src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&amp;fit=crop&amp;w=950&amp;q=80"
+              alt="London at dusk"
+            />
+            <div class="deal-copy">
+              <div class="tag">Europe · City break</div>
+              <h3>London is calling.</h3>
+              <p>Fly nonstop and make more of every moment away.</p>
+              <a href="#book">Explore London &nbsp;↗</a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="club" id="club">
+        <div class="club-inner">
+          <div class="club-copy">
+            <div class="eyebrow">A little more in every journey</div>
+            <h2>Meet Maharaja Club.</h2>
+            <p>
+              Travel should take you further. Earn points on every flight,
+              unlock thoughtful privileges and turn the miles you travel into
+              the memories you make.
+            </p>
+            <div class="benefits">
+              <div><strong>Earn</strong>Points on every journey</div>
+              <div><strong>Enjoy</strong>Privileges along the way</div>
+              <div><strong>Explore</strong>More ways to redeem</div>
+            </div>
+          </div>
+          <button
+            class="club-btn"
+            onclick="
+              toast(
+                'Welcome to Maharaja Club. Membership details are coming soon.',
+              )
+            "
+          >
+            Discover the club&nbsp; →
+          </button>
+        </div>
+      </section>
+      <section class="section routes" id="routes">
+        <div class="heading">
+          <div>
+            <div class="eyebrow">Go a little further</div>
+            <h2>Popular nonstop routes</h2>
+          </div>
+          <a href="#book" class="view">View route map&nbsp; →</a>
+        </div>
+        <div class="route-grid">
+          <a class="route" href="#book"
+            ><span
+              ><small>FROM DELHI</small
+              ><strong>Delhi <i>→</i> Mumbai</strong></span
+            ><i>↗</i></a
+          ><a class="route" href="#book"
+            ><span
+              ><small>FROM DELHI</small
+              ><strong>Delhi <i>→</i> London</strong></span
+            ><i>↗</i></a
+          ><a class="route" href="#book"
+            ><span
+              ><small>FROM MUMBAI</small
+              ><strong>Mumbai <i>→</i> Singapore</strong></span
+            ><i>↗</i></a
+          ><a class="route" href="#book"
+            ><span
+              ><small>FROM BENGALURU</small
+              ><strong>Bengaluru <i>→</i> San Francisco</strong></span
+            ><i>↗</i></a
+          >
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-about">
+            <a class="brand" href="#top"
+              ><span class="brand-mark">A</span
+              ><span class="brand-name"
+                >AIR INDIA<small>FLY THE NEW</small></span
+              ></a
+            >
+            <p class="footer-blurb">
+              A new, world-class Air India is taking shape. Wherever you’re
+              going, we’re glad you’re flying with us.
+            </p>
+          </div>
+          <div class="footer-col">
+            <b>Book &amp; manage</b><a href="#book">Book a flight</a
+            ><a href="#book">Manage booking</a><a href="#book">Web check-in</a
+            ><a href="#book">Flight status</a>
+          </div>
+          <div class="footer-col">
+            <b>Discover</b><a href="#routes">Where we fly</a
+            ><a href="#deals">Special offers</a><a href="#club">Maharaja Club</a
+            ><a href="#">Our experience</a>
+          </div>
+          <div class="footer-col">
+            <b>Helpful links</b><a href="#">Baggage information</a
+            ><a href="#">Travel requirements</a><a href="#">Contact us</a
+            ><a href="#">FAQs</a>
+          </div>
+          <div class="footer-col">
+            <b>Follow the journey</b><a href="#">Instagram</a
+            ><a href="#">Facebook</a><a href="#">LinkedIn</a
+            ><a href="#">YouTube</a>
+          </div>
+        </div>
+        <div class="bottom">
+          <span>© 2025 Air India Limited · All rights reserved.</span
+          ><span
+            >Privacy &nbsp; · &nbsp; Conditions of carriage &nbsp; · &nbsp;
+            Accessibility</span
+          >
+        </div>
+      </div>
+    </footer>
+    <nav class="mobile">
+      <a href="#book"><span>✈</span>Book</a
+      ><a href="#book" data-action="checkin"><span>▤</span>Check-in</a
+      ><a href="#routes"><span>◎</span>Explore</a
+      ><a href="#club"><span>♙</span>Club</a>
+    </nav>
+    <div class="toast" id="toast"></div>
+    <script>
+      const tabs = [...document.querySelectorAll(".tab")],
+        flight = document.getElementById("flight-panel"),
+        action = document.getElementById("action-panel");
+      tabs.forEach(
+        (t) =>
+          (t.onclick = () => {
+            tabs.forEach((x) => x.classList.toggle("active", x === t));
+            let p = t.dataset.panel;
+            flight.style.display = p === "flights" ? "block" : "none";
+            action.style.display = p === "flights" ? "none" : "grid";
+            document.getElementById("action-label").textContent =
+              p === "status" ? "Flight number" : "Booking reference";
+            document.getElementById("action-submit").textContent =
+              p === "checkin"
+                ? "Check in →"
+                : p === "status"
+                  ? "Check status →"
+                  : "Retrieve booking →";
+            document.getElementById("reference").placeholder =
+              p === "status" ? "e.g. AI 101" : "e.g. ABC123";
+          }),
+      );
+      document
+        .querySelectorAll("[data-action]")
+        .forEach(
+          (a) =>
+            (a.onclick = () =>
+              document
+                .querySelector('[data-panel="' + a.dataset.action + '"]')
+                .click()),
+        );
+      document.querySelector(".swap").onclick = () => {
+        let a = document.getElementById("from"),
+          b = document.getElementById("to");
+        [a.value, b.value] = [b.value, a.value];
+      };
+      document.querySelectorAll("[name=trip]").forEach(
+        (r, i) =>
+          (r.onchange = () => {
+            let f = document.getElementById("return").closest(".field");
+            f.style.opacity = i === 1 ? ".45" : "1";
+            document.getElementById("return").disabled = i === 1;
+          }),
+      );
+      let d = new Date(),
+        t = new Date(d),
+        r = new Date(d);
+      t.setDate(d.getDate() + 1);
+      r.setDate(d.getDate() + 8);
+      let iso = (x) =>
+        new Date(x.getTime() - x.getTimezoneOffset() * 60000)
+          .toISOString()
+          .slice(0, 10);
+      document.getElementById("depart").min = iso(d);
+      document.getElementById("depart").value = iso(t);
+      document.getElementById("return").min = iso(t);
+      document.getElementById("return").value = iso(r);
+      document.getElementById("depart").onchange = (e) => {
+        let x = document.getElementById("return");
+        x.min = e.target.value;
+        if (x.value < e.target.value) x.value = e.target.value;
+      };
+      document.getElementById("flight-form").onsubmit = (e) => {
+        e.preventDefault();
+        let v = document.getElementById("to").value.trim();
+        if (!v) {
+          document.getElementById("to").focus();
+          return toast("Choose where you would like to fly.");
+        }
+        toast(
+          "Searching flights from " +
+            document.getElementById("from").value +
+            " to " +
+            v +
+            "…",
+        );
+      };
+      document.getElementById("action-submit").onclick = () => {
+        if (!document.getElementById("reference").value.trim()) {
+          document.getElementById("reference").focus();
+          return toast("Enter your booking details to continue.");
+        }
+        toast("Your trip details are ready to look up.");
+      };
+      document.querySelector(".menu-btn").onclick = () => {
+        let n = document.querySelector(".navlinks"),
+          s = n.style.display === "flex";
+        n.style.cssText = s
+          ? ""
+          : "display:flex;position:absolute;top:64px;left:0;right:0;background:#fff;padding:12px 20px;flex-direction:column;gap:0;box-shadow:0 12px 20px #0001";
+      };
+      function toast(m) {
+        let e = document.getElementById("toast");
+        e.textContent = m;
+        e.classList.add("show");
+        clearTimeout(window.tt);
+        window.tt = setTimeout(() => e.classList.remove("show"), 2800);
+      }
+    </script>
+  </body>
+</html>
