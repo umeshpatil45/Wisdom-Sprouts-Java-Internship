@@ -1,0 +1,719 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #ffffff;
+    color: #111111;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+.demo-container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px 30px;
+}
+
+.demo-section {
+    margin-bottom: 55px;
+}
+
+.demo-section h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 22px;
+}
+
+
+   /* 1. WHATSAPP NAVBAR */
+
+.whatsapp-navbar {
+    min-height: 66px;
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #171a1b;
+    color: #f5f5f5;
+}
+
+.wa-group-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #ff526c;
+    background: #38202a;
+    font-size: 16px;
+}
+
+.wa-group-info {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.wa-group-info h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.wa-group-info p {
+    color: #a6a6a6;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wa-list-button {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 11px 15px;
+    border: 1px solid #3a3d3e;
+    border-radius: 25px;
+    background: transparent;
+    color: #eeeeee;
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+.wa-list-button:hover,
+.wa-icon-button:hover {
+    background: #292c2d;
+}
+
+.wa-icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 42px;
+    height: 42px;
+    padding: 0 10px;
+    color: #eeeeee;
+    background: transparent;
+    font-size: 17px;
+}
+
+.wa-icon-button:last-child {
+    border-left: 1px solid #353839;
+}
+
+
+/* ==============================
+   2. LINKEDIN NAVBAR
+============================== */
+
+.linkedin-navbar {
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 5%;
+    border-bottom: 4px solid #f3f2ef;
+    background: #ffffff;
+}
+
+.linkedin-logo {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 3px;
+    background: #0a66c2;
+    color: #ffffff;
+    font-size: 27px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.linkedin-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 280px;
+    height: 36px;
+    padding: 0 13px;
+    border: 1px solid #c5c5c5;
+    border-radius: 22px;
+    background: #f8fafd;
+    color: #333333;
+}
+
+.linkedin-search input {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 13px;
+}
+
+.linkedin-links {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+    gap: 0;
+    flex: 1;
+    min-width: 0;
+}
+
+.linkedin-item {
+    position: relative;
+    min-width: 76px;
+    padding: 0 9px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: #666666;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.linkedin-item > i {
+    font-size: 20px;
+}
+
+.linkedin-item.active {
+    color: #222222;
+    border-bottom: 2px solid #222222;
+}
+
+.linkedin-item:hover {
+    color: #111111;
+}
+
+.icon-with-badge {
+    position: relative;
+    display: inline-flex;
+    font-size: 20px;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    display: grid;
+    place-items: center;
+    min-width: 17px;
+    height: 17px;
+    padding: 0 4px;
+    border-radius: 20px;
+    background: #cc101f;
+    color: #ffffff;
+    font-size: 10px;
+}
+
+.notification-badge.large {
+    right: -18px;
+}
+
+.business-link {
+    border-left: 1px solid #eeeeee;
+}
+
+.premium-link {
+    color: #85622c;
+}
+
+
+/* ==============================
+   3. BOOKMYSHOW NAVBAR
+============================== */
+
+.bms-navbar {
+    background: #ffffff;
+    color: #333333;
+}
+
+.bms-topbar {
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 10px 6%;
+}
+
+.bms-logo {
+    flex-shrink: 0;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    color: #333333;
+}
+
+.bms-logo span {
+    color: #e84159;
+    font-weight: 800;
+}
+
+.bms-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    max-width: 540px;
+    height: 38px;
+    padding: 0 12px;
+    border: 1px solid #e4e4e4;
+    border-radius: 4px;
+    color: #555555;
+}
+
+.bms-search input {
+    width: 100%;
+    min-width: 0;
+    outline: none;
+    border: none;
+    background: transparent;
+    font-size: 12px;
+}
+
+.bms-search input::placeholder {
+    color: #999999;
+}
+
+.bms-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-left: auto;
+}
+
+.bms-city {
+    background: transparent;
+    color: #333333;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.bms-city i {
+    margin-left: 7px;
+    color: #777777;
+    font-size: 10px;
+}
+
+.bms-signin {
+    padding: 8px 16px;
+    border-radius: 5px;
+    background: #f04460;
+    color: white;
+    font-size: 11px;
+}
+
+.bms-signin:hover {
+    background: #d92f4d;
+}
+
+.bms-menu {
+    background: transparent;
+    color: #555555;
+    font-size: 19px;
+}
+
+.bms-bottom-bar {
+    min-height: 36px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: #f5f5f5;
+}
+
+.bms-categories,
+.bms-extra-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.bms-bottom-bar a {
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.bms-bottom-bar a:hover {
+    color: #e84159;
+}
+
+
+
+   /* 4. WISDOM SPROUTS NAVBAR */
+
+
+.wisdom-navbar {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px 25px;
+    background-color: #d2e8e6;
+
+    /* Decorative curved background pattern */
+    background-image:
+        repeating-radial-gradient(
+            ellipse at 35% 150%,
+            transparent 0 24px,
+            rgba(255, 255, 255, 0.27) 25px 26px,
+            transparent 27px 42px
+        );
+}
+
+.wisdom-logo {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-shrink: 0;
+    color: #4c8f8a;
+}
+
+.wisdom-logo > i {
+    font-size: 26px;
+}
+
+.wisdom-logo span {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    line-height: 1.05;
+    letter-spacing: 1px;
+}
+
+.wisdom-logo small {
+    margin-top: 4px;
+    font-size: 8px;
+    letter-spacing: 0;
+}
+
+.wisdom-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.wisdom-links a {
+    font-size: 12px;
+    color: #374151;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.wisdom-links a:hover,
+.wisdom-links a.wisdom-active {
+    color: #ff6b35;
+}
+
+.wisdom-contact {
+    padding: 10px 19px;
+    border-radius: 30px;
+    background: #ff682f;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.wisdom-contact:hover {
+    background: #e95420;
+}
+
+.wisdom-toggle {
+    display: none;
+    background: transparent;
+    color: #374151;
+    font-size: 22px;
+}
+
+
+   /* 5. INSTAGRAM FOOTER */
+
+.instagram-footer {
+    min-height: 95px;
+    padding: 17px 20px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    background: #0b1013;
+    color: #a8aaad;
+}
+
+.instagram-footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 9px 13px;
+}
+
+.instagram-footer-links a {
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+.instagram-footer-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.instagram-footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 9px;
+}
+
+.instagram-language {
+    background: transparent;
+    color: #a8aaad;
+    font-size: 9px;
+}
+
+.instagram-language i {
+    margin-left: 4px;
+    font-size: 8px;
+}
+
+
+
+   /* RESPONSIVE DESIGN */
+
+@media (max-width: 1100px) {
+    .demo-container {
+        padding: 20px;
+    }
+
+    .linkedin-navbar {
+        flex-wrap: wrap;
+    }
+
+    .linkedin-search {
+        width: 220px;
+    }
+
+    .linkedin-links {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+    }
+
+    .wisdom-navbar {
+        gap: 12px;
+    }
+
+    .wisdom-links {
+        gap: 12px;
+    }
+
+    .wisdom-links a {
+        font-size: 11px;
+    }
+
+    .bms-bottom-bar {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .demo-container {
+        padding: 16px;
+    }
+
+    .demo-section {
+        margin-bottom: 40px;
+    }
+
+    .demo-section h2 {
+        font-size: 24px;
+    }
+
+    /* WhatsApp */
+    .whatsapp-navbar {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .wa-group-info p {
+        max-width: 260px;
+    }
+
+    .wa-list-button span,
+    .wa-list-button .fa-caret-down {
+        display: none;
+    }
+
+    .wa-list-button {
+        padding: 11px;
+    }
+
+    /* LinkedIn */
+    .linkedin-navbar {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .linkedin-search {
+        flex: 1;
+        width: auto;
+    }
+
+    .linkedin-links {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .linkedin-item {
+        min-width: 75px;
+    }
+
+    /* BookMyShow */
+    .bms-topbar {
+        flex-wrap: wrap;
+        gap: 14px;
+        padding: 14px;
+    }
+
+    .bms-search {
+        order: 3;
+        flex-basis: 100%;
+        max-width: none;
+    }
+
+    .bms-actions {
+        gap: 12px;
+    }
+
+    .bms-bottom-bar {
+        padding: 12px 14px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .bms-categories,
+    .bms-extra-links {
+        gap: 16px;
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    /* Wisdom Sprouts */
+    .wisdom-navbar {
+        position: relative;
+        flex-wrap: wrap;
+        min-height: 75px;
+        padding: 15px;
+    }
+
+    .wisdom-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .wisdom-links {
+        display: none;
+        flex-basis: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 12px 0;
+    }
+
+    .wisdom-contact {
+        display: none;
+    }
+
+    /* Instagram */
+    .instagram-footer {
+        padding: 20px 12px;
+    }
+
+    .instagram-footer-links {
+        gap: 12px;
+    }
+
+    .instagram-footer-bottom {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 420px) {
+    .demo-container {
+        padding: 12px;
+    }
+
+    .demo-section h2 {
+        font-size: 21px;
+    }
+
+    .wa-group-icon {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+    }
+
+    .wa-group-info h3 {
+        font-size: 12px;
+    }
+
+    .wa-group-info p {
+        font-size: 10px;
+        max-width: 150px;
+    }
+
+    .wa-icon-button {
+        min-width: 30px;
+        padding: 0 5px;
+        font-size: 14px;
+    }
+
+    .linkedin-item {
+        min-width: 68px;
+        padding: 0 7px;
+        font-size: 10px;
+    }
+
+    .bms-logo {
+        font-size: 18px;
+    }
+
+    .bms-actions {
+        margin-left: auto;
+    }
+
+    .instagram-footer-links a {
+        font-size: 9px;
+    }
+}
