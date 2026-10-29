@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Times New Roman", serif;
+            margin: 0;
+            padding: 5px 10px;
+        }
+
+        .container {
+            border: 4px solid #d9dfe2;
+            padding: 40px 90px 15px;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 58px;
+            margin: 0 0 65px;
+        }
+
+        p {
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 6px;
+            margin: 0 0 2px;
+            border: 1px solid #999;
+            border-radius: 4px;
+            font-size: 25px;
+        }
+
+        button {
+            width: 100%;
+            padding: 5px;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .signin {
+            text-align: center;
+            font-size: 30px;
+            margin-top: 30px;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px 20px;
+            }
+
+            h1 {
+                font-size: 42px;
+                margin-bottom: 40px;
+            }
+
+            p, label, .signin {
+                font-size: 22px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            button {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="#" method="post">
+            <h1>Register</h1>
+
+            <p>Kindly fill in this form to register.</p>
+
+            <label for="username">Username</label>
+            <input type="text" id="username"
+                   name="username" placeholder="Enter username" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email"
+                   name="email" placeholder="Enter Email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password"
+                   name="password" placeholder="Enter Password" required>
+
+            <label for="repeat-password">Repeat Password</label>
+            <input type="password" id="repeat-password"
+                   name="repeat-password" placeholder="Repeat Password" required>
+
+            <button type="submit">Register</button>
+
+            <p class="signin">
+                Already have an account?
+                <a href="login.html">Log in</a>.
+            </p>
+        </form>
+    </div>
+
+</body>
+</html>

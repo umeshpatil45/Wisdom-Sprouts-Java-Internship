@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #4169f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 850px;
+            background: white;
+            padding: 25px 30px;
+            border-radius: 6px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 35px;
+        }
+
+        header::after {
+            content: "";
+            display: block;
+            width: 35px;
+            height: 3px;
+            background: #4169f5;
+            margin-top: 3px;
+        }
+
+        .title {
+            font-size: 17px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .form {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px 25px;
+        }
+
+        .input-box label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 38px;
+            padding: 0 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .input-box input:focus {
+            border-color: #4169f5;
+        }
+
+        .section {
+            margin-top: 25px;
+        }
+
+        .button-box {
+            margin-top: 30px;
+        }
+
+        button {
+            width: 30%;
+            min-width: 150px;
+            height: 42px;
+            border: none;
+            border-radius: 4px;
+            background: #4169f5;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3055d8;
+        }
+
+        button span {
+            margin-left: 10px;
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                padding: 22px 18px;
+            }
+
+            .form {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 18px 15px;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .form {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>Registration</header>
+
+        <form action="#" method="post">
+
+            <div class="title">Personal Details</div>
+
+            <div class="form">
+
+                <div class="input-box">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name"
+                           placeholder="Enter your name" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="dob">Date of Birth</label>
+                    <input type="text" id="dob"
+                           placeholder="Enter birth date" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="email">Email</label>
+                    <input type="email" id="email"
+                           placeholder="Enter your email" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="mobile">Mobile number</label>
+                    <input type="tel" id="mobile"
+                           placeholder="Enter mobile number" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="gender">Gender</label>
+                    <input type="text" id="gender"
+                           placeholder="Enter your gender" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="occupation">Occupation</label>
+                    <input type="text" id="occupation"
+                           placeholder="Enter occupation" required>
+                </div>
+
+            </div>
+
+            <div class="section">
+                <div class="title">Identity Details</div>
+
+                <div class="form">
+
+                    <div class="input-box">
+                        <label for="idtype">ID Type</label>
+                        <input type="text" id="idtype"
+                               placeholder="Enter ID type" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="idnumber">ID Number</label>
+                        <input type="text" id="idnumber"
+                               placeholder="Enter ID number" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="authority">Issue Authority</label>
+                        <input type="text" id="authority"
+                               placeholder="Enter issue department" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="issuedate">Issue Date</label>
+                        <input type="text" id="issuedate"
+                               placeholder="Enter ID issue date" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="state">Issue State</label>
+                        <input type="text" id="state"
+                               placeholder="Enter ID issue state" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="expiry">Expiry Date</label>
+                        <input type="text" id="expiry"
+                               placeholder="Enter ID expiry date" required>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="button-box">
+                <button type="button" onclick="nextStep()">
+                    Next <span>→</span>
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        function nextStep() {
+            const form = document.querySelector("form");
+
+            if (form.checkValidity()) {
+                alert("Personal and identity details completed!");
+            } else {
+                form.reportValidity();
+            }
+        }
+    </script>
+
+</body>
+</html>
